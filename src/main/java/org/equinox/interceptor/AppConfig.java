@@ -11,11 +11,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class AppConfig implements WebMvcConfigurer {
 
     @Autowired
-    @Qualifier("timeInterceptor")
+    @Qualifier("calendarInterceptor")
     private HandlerInterceptor handlerInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(handlerInterceptor).addPathPatterns("/app/baz", "/app/bar");
+        registry.addInterceptor(handlerInterceptor).addPathPatterns("/app/baz", "/app/foo");
     }
 }
